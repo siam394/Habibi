@@ -16,8 +16,8 @@ public class RamadanEvent extends JavaPlugin {
 
     private Economy economy;
 
-    private final LocalDate RAMADAN_START = LocalDate.of(2026, 3, 1);
-    private final LocalDate RAMADAN_END   = LocalDate.of(2026, 3, 30);
+    private final LocalDate RAMADAN_START = LocalDate.of(2026, 2, 18);
+    private final LocalDate RAMADAN_END   = LocalDate.of(2026, 3, 19);
 
     private final LocalTime SEHERI_TIME = LocalTime.of(4, 0);
     private final LocalTime IFTAR_TIME  = LocalTime.of(18, 30);
