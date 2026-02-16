@@ -1,0 +1,6 @@
+name: RamadanEvent
+version: 1.0
+main: me.siam.ramadan.RamadanEvent
+api-version: 1.21
+author: Siam
+description: Ramadan Seheri & Iftar Event Plugin
