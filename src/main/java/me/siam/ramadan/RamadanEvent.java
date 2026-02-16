@@ -16,12 +16,11 @@ public class RamadanEvent extends JavaPlugin {
 
     private Economy economy;
 
-    // Ramadan Dates (EDIT HERE)
     private final LocalDate RAMADAN_START = LocalDate.of(2026, 3, 1);
     private final LocalDate RAMADAN_END   = LocalDate.of(2026, 3, 30);
 
     private final LocalTime SEHERI_TIME = LocalTime.of(4, 0);
-    private final LocalTime IFTAR_TIME = LocalTime.of(18, 30);
+    private final LocalTime IFTAR_TIME  = LocalTime.of(18, 30);
 
     private LocalDate lastSeheriGiven = null;
     private LocalDate lastIftarGiven = null;
@@ -33,6 +32,9 @@ public class RamadanEvent extends JavaPlugin {
         if (!setupEconomy()) {
             getLogger().warning("Vault not found! Money reward disabled.");
         }
+
+        // ✅ Scoreboard Start
+        new RamadanScoreboard(this);
 
         startRamadanClock();
         getLogger().info("Ramadan Event Plugin Enabled!");
@@ -88,6 +90,7 @@ public class RamadanEvent extends JavaPlugin {
     }
 
     private void giveSeheriReward() {
+
         Bukkit.broadcastMessage("§b🌙 Seheri Time! Free food given!");
 
         for (Player player : Bukkit.getOnlinePlayers()) {
@@ -97,6 +100,7 @@ public class RamadanEvent extends JavaPlugin {
     }
 
     private void giveIftarReward() {
+
         Bukkit.broadcastMessage("§6🌇 Iftar Time! Free food given!");
 
         for (Player player : Bukkit.getOnlinePlayers()) {
@@ -111,11 +115,9 @@ public class RamadanEvent extends JavaPlugin {
 
         for (Player player : Bukkit.getOnlinePlayers()) {
 
-            // OP Loot
             player.getInventory().addItem(new ItemStack(Material.NETHERITE_INGOT, 5));
             player.getInventory().addItem(new ItemStack(Material.ENCHANTED_GOLDEN_APPLE, 2));
 
-            // Money Reward
             if (economy != null) {
                 economy.depositPlayer(player, 10000);
             }
