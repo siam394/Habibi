@@ -1,0 +1,10 @@
+name: RamadanEvent
+version: 1.0
+main: me.siam.ramadan.RamadanEvent
+api-version: 1.21
+author: Siam
+description: Ramadan Special Event Plugin
+
+commands:
+  ramadan:
+    description: Main Ramadan command
