@@ -42,6 +42,6 @@ public class RamadanScoreboard {
                     player.setScoreboard(board);
                 }
             }
-        }.runTaskTimer(plugin, 0, 20); // প্রতি ২০ tick = ১ সেকেন্ড
+        }.runTaskTimer(plugin, 0, 20); 
     }
 }
